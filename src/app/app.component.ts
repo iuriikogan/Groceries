@@ -2,15 +2,16 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "gr-main",
-    template:` 
-        <StackLayout>
-        <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
-        <TextField hint="Password" secure="true"></TextField>
+    template:
+        `<StackLayout>
+            <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
+            <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField hint="Password" secure="true"></TextField>
 
-        <Button text="Sign in" class="submit-button"></Button>
-        <Button text="Sign up for Groceries"></Button>
+            <Button text="Sign in" class="submit-button"></Button>
+            <Button text="Sign up for Groceries"></Button>
         </StackLayout>
     `,
-    styleUrls: ['./src/app/pages/login/login-common.css', './src/app/pages/login/login.css']
+    styleUrls: ['app/pages/login/login.css','app/pages/login/login-common.css']
 })
-export class AppComponent { }
+export class AppComponent { } 
