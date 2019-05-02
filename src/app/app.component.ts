@@ -2,6 +2,15 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "gr-main",
-    template: "<Label text='hello world'></Label>"
+    template:` 
+        <StackLayout>
+        <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+        <TextField hint="Password" secure="true"></TextField>
+
+        <Button text="Sign in" class="submit-button"></Button>
+        <Button text="Sign up for Groceries"></Button>
+        </StackLayout>
+    `,
+    styleUrls: ['./src/app/pages/login/login-common.css', './src/app/pages/login/login.css']
 })
 export class AppComponent { }
