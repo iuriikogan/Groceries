@@ -11,10 +11,13 @@ import { UserService } from './shared/user/user.service';
 export class AppComponent { 
 
     public user: User;
+
     isLoggingIn = true;
 
     constructor(private userService: UserService) {
         this.user = new User()
+        this.user.email = 'koganiurii@gmail.com'
+        this.user.password = '123123123'
     }
 
     public submit() {
@@ -27,7 +30,14 @@ export class AppComponent {
         this.isLoggingIn = !this.isLoggingIn;
     }
     private signUp () {
-        this.userService.register(this.user);
+        this.userService.register(this.user)
+        .subscribe(
+            () => {
+                    alert('Your Account was succesfully created.')
+                    this.toggleDisplay();
+            },
+            () => alert('Unfortunately, We were unable to create your account.')
+        )
 
     }
     private login () {
