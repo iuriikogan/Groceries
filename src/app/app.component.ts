@@ -5,10 +5,18 @@ import { UserService } from './shared/user/user.service';
 @Component({
     selector: "gr-main",
     providers: [UserService],
-    templateUrl: "/app/pages/login/login.component.html",
-    styleUrls: ['app/pages/login/login.css','app/pages/login/login-common.css']
+    templateUrl: `<StackLayout>
+    <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
+    <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"
+        [(ngModel)]="user.email"></TextField>
+    <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+    <Button [text]="isLoggingIn ? 'Sign In' : 'Sign Up'" class="submit-button" (tap)="submit()"></Button>
+    <Button [text]="isLoggingIn ? 'Sign Up' : 'Back to Login'"></Button>
+</StackLayout>`,
+    styleUrls: ['app/pages/login/login.css', 'app/pages/login/login-common.css']
 })
-export class AppComponent { 
+export class AppComponent {
 
     public user: User;
 
@@ -21,7 +29,7 @@ export class AppComponent {
     }
 
     public submit() {
-        if(this.isLoggingIn) {
+        if (this.isLoggingIn) {
             this.login();
         } else this.signUp();
     }
@@ -29,19 +37,19 @@ export class AppComponent {
     public toggleDisplay() {
         this.isLoggingIn = !this.isLoggingIn;
     }
-    private signUp () {
+    private signUp() {
         this.userService.register(this.user)
-        .subscribe(
-            () => {
+            .subscribe(
+                () => {
                     alert('Your Account was succesfully created.')
                     this.toggleDisplay();
-            },
-            () => alert('Unfortunately, We were unable to create your account.')
-        )
+                },
+                () => alert('Unfortunately, We were unable to create your account.')
+            )
 
     }
-    private login () {
+    private login() {
         //define this
     }
-} 
+}
 
