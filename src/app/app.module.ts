@@ -1,20 +1,27 @@
- import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { NativeScriptFormsModule} from 'nativescript-angular/forms';
-import {NativeScriptHttpClientModule} from 'nativescript-angular/http-client'
-import {AppComponent} from './app.component';
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { NativeScriptRouterModule } from 'nativescript-angular/router/router.module';
 
+import { AppComponent }  from './app.component';
+import { routes, navigatableComponents } from './app.routing';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
     bootstrap: [
-        AppComponent
+        AppComponent, 
+        LoginComponent
     ],
     imports: [
         NativeScriptModule,
         NativeScriptFormsModule,
-        NativeScriptHttpClientModule 
+        NativeScriptHttpClientModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(routes) 
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        ...navigatableComponents
     ],
     providers: [],
     schemas: [
