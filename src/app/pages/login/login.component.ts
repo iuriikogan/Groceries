@@ -10,8 +10,7 @@ import { UserService } from '../../shared/user/user.service';
 import * as SocialShare from 'nativescript-social-share';
 
 
-
-@Component ({
+@Component({
     selector: "gr-main",
     providers: [UserService],
     templateUrl: './login.component.html',
@@ -34,7 +33,7 @@ export class LoginComponent implements OnInit {
          
         private router: Router,
         private userService: UserService,
-        private page: Page
+        private page: Page,
 
     ) 
 
