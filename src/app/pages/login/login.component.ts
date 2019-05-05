@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     @ViewChild('container') container: ElementRef;
 
     public ngOnInit() {
+        
         this.page.actionBarHidden = true;
         this.page.backgroundImage = 'res://bg_login'
     }
@@ -43,6 +44,10 @@ export class LoginComponent implements OnInit {
     }
 
     public submit() {
+        if (!this.user.isValidEmail()) {
+            alert('Enter a valid email address.')
+            return;
+        }
         if (this.isLoggingIn) {
             this.login();
         } else this.signUp();
