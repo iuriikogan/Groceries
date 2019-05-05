@@ -7,6 +7,7 @@ import { Color } from 'tns-core-modules/color';
 
 import { User } from "../../shared/user/user"
 import { UserService } from '../../shared/user/user.service';
+import { Config } from "~/app/shared/config";
 
 
 @Component ({
@@ -22,8 +23,7 @@ export class LoginComponent implements OnInit {
 
     @ViewChild('container') container: ElementRef;
 
-    public ngOnInit() {
-        
+    public ngOnInit() {        
         this.page.actionBarHidden = true;
         this.page.backgroundImage = 'res://bg_login'
     }

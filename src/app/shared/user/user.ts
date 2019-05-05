@@ -7,4 +7,4 @@ export class User {
     public isValidEmail() {
         return validator.validate(this.email)
     }
-}
+}    

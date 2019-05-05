@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
+
 import { tap, catchError } from "rxjs/operators";
 import { throwError } from 'rxjs';
 
 import { User } from './user';
 import { Config } from '../config';
 
+
 @Injectable()
 export class UserService {
-
+    
     constructor(private http: HttpClient) { }
 
     public register(user: User) {
