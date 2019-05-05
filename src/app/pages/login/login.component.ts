@@ -7,7 +7,8 @@ import { Color } from 'tns-core-modules/color';
 
 import { User } from "../../shared/user/user"
 import { UserService } from '../../shared/user/user.service';
-import { Config } from "~/app/shared/config";
+import * as SocialShare from 'nativescript-social-share';
+
 
 
 @Component ({
