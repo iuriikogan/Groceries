@@ -3,7 +3,7 @@ import { Grocery } from '~/app/shared/grocery/grocery';
 import { GroceryListService } from '~/app/shared/grocery/grocery-list.service';
 import { TextField } from 'tns-core-modules/ui/text-field';
 import * as SocialShare from 'nativescript-social-share';
-import { backgroundSizeProperty } from 'tns-core-modules/ui/page/page';
+
 
 
 @Component({
